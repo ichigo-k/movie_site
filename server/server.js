@@ -12,7 +12,7 @@ app.use(cors())
 app.use(bodyParser.json());
 
 
-const URL = 'https://movie-site-1.onrender.com';
+const URL = process.env.URL;
 
 cron.schedule('*/5 * * * *', async () => {
     try {
@@ -31,6 +31,7 @@ const tvShowRouter = require("./routers/tvShowRoutes")
 
 app.get("/", (req, res) => {
     console.log("Logged")
+    res.status(200).send("Up and alive")
 })
 app.use("/api/v1/movies", movieRouter)
 app.use("/api/v1/tvShows", tvShowRouter)
