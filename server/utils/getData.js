@@ -6,7 +6,6 @@ const getData = async (req, res, next, url, page) => {
 
         
         if (!data || !data.results) {
-            console.log("RAW DATA FROM API:", data); 
             return res.status(500).json({ message: "Invalid data received from API." });
         }
 
