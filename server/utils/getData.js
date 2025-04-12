@@ -1,6 +1,6 @@
 const getData = async (req, res, next, url, page) => {
     try {
-        console.log(process.env.API_KEY)
+       
         const response = await fetch(`${url}&api_key=${process.env.API_KEY}${page ? '&page=' + page : ''}`);
         const data = await response.json();
 
